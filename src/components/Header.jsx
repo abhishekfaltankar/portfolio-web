@@ -59,20 +59,20 @@ export function Header({ onOpenResume }) {
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-base/85 border-b border-edge/60 transition-colors">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Typographic Monogram Logo */}
         <a
           href="#top"
-          className="group flex items-center gap-2.5 font-mono text-sm tracking-tight text-content-primary hover:text-accent transition-colors focus:ring-1 focus:ring-accent"
+          className="group flex items-center gap-2 sm:gap-2.5 font-mono text-sm tracking-tight text-content-primary hover:text-accent transition-colors focus:ring-1 focus:ring-accent"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded bg-base-elevated border border-edge font-bold text-accent group-hover:border-accent transition-colors">
+          <span className="flex items-center justify-center w-8 h-8 rounded bg-base-elevated border border-edge font-bold text-accent group-hover:border-accent transition-colors shrink-0">
             {profile.monogram}
           </span>
           <div className="flex flex-col">
             <span className="font-semibold text-xs leading-none text-content-primary group-hover:text-accent">
               abhishek.dev
             </span>
-            <span className="text-[10px] text-content-muted leading-tight mt-0.5">
+            <span className="text-[10px] text-content-muted leading-tight mt-0.5 hidden min-[360px]:inline">
               ai &amp; software
             </span>
           </div>
@@ -143,7 +143,7 @@ export function Header({ onOpenResume }) {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-edge bg-base-secondary/95 backdrop-blur-lg px-4 pt-3 pb-5 space-y-2 animate-in fade-in duration-150">
+        <div className="md:hidden border-b border-edge bg-base-secondary/95 backdrop-blur-lg px-4 pt-3 pb-5 space-y-2 max-h-[calc(100dvh-4rem)] overflow-y-auto animate-in fade-in duration-150">
           <nav className="flex flex-col space-y-1" aria-label="Mobile Navigation">
             {navLinks.map((link) => (
               <a

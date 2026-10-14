@@ -91,11 +91,11 @@ export function ContactSection() {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
       {/* Left column: Direct contact info */}
       <div className="lg:col-span-5 space-y-6">
-        <div className="p-6 rounded-lg bg-base-secondary/80 border border-edge">
+        <div className="p-4 sm:p-6 rounded-lg bg-base-secondary/80 border border-edge">
           <h3 className="font-mono text-xs uppercase tracking-wider text-accent mb-2">
             Direct Communication
           </h3>
-          <p className="text-sm text-content-secondary leading-relaxed mb-6">
+          <p className="text-xs sm:text-sm text-content-secondary leading-relaxed mb-6">
             I am actively seeking software engineering placements and internships. Whether you have an open role, technical feedback on my projects, or an interesting engineering problem, my inbox is open.
           </p>
 
@@ -105,13 +105,13 @@ export function ContactSection() {
               href={`mailto:${profile.social.email}?subject=Software%20Development%20Opportunity`}
               className="flex items-center justify-between p-3.5 rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary group transition-colors"
             >
-              <div className="flex items-center gap-3">
-                <Mail size={16} className="text-accent" />
-                <span className="font-mono text-xs sm:text-sm font-medium">
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
+                <Mail size={16} className="text-accent shrink-0" />
+                <span className="font-mono text-xs sm:text-sm font-medium break-all">
                   {profile.social.email}
                 </span>
               </div>
-              <ArrowUpRight size={14} className="text-content-muted group-hover:text-accent transition-colors" />
+              <ArrowUpRight size={14} className="text-content-muted group-hover:text-accent transition-colors shrink-0" />
             </a>
 
             <button
@@ -183,7 +183,7 @@ export function ContactSection() {
 
       {/* Right column: Form or Honest Email-first fallback */}
       <div className="lg:col-span-7">
-        <div className="p-6 sm:p-8 rounded-lg bg-base-secondary/80 border border-edge">
+        <div className="p-4 sm:p-6 lg:p-8 rounded-lg bg-base-secondary/80 border border-edge">
           <div className="flex items-center justify-between mb-5">
             <h3 className="text-lg sm:text-xl font-bold tracking-tight text-content-primary">
               Send a Message
@@ -203,7 +203,7 @@ export function ContactSection() {
           )}
 
           {submitStatus === 'success' ? (
-            <div className="p-6 rounded-lg bg-emerald-950/30 border border-emerald-800/40 text-emerald-300 space-y-3 font-mono text-sm">
+            <div className="p-5 sm:p-6 rounded-lg bg-emerald-950/30 border border-emerald-800/40 text-emerald-300 space-y-3 font-mono text-sm">
               <div className="flex items-center gap-2 font-bold">
                 <Check size={18} />
                 <span>Message Sent Successfully</span>
@@ -244,7 +244,7 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Maya Lin"
-                  className={`w-full px-3.5 py-2.5 rounded bg-base border text-sm text-content-primary placeholder:text-content-muted/60 focus:ring-1 focus:ring-accent ${
+                  className={`w-full px-3.5 py-2.5 rounded bg-base border text-base sm:text-sm text-content-primary placeholder:text-content-muted/60 focus:ring-1 focus:ring-accent ${
                     errors.name ? 'border-red-500' : 'border-edge'
                   }`}
                 />
@@ -267,7 +267,7 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="e.g. recruiter@company.com"
-                  className={`w-full px-3.5 py-2.5 rounded bg-base border text-sm text-content-primary placeholder:text-content-muted/60 focus:ring-1 focus:ring-accent ${
+                  className={`w-full px-3.5 py-2.5 rounded bg-base border text-base sm:text-sm text-content-primary placeholder:text-content-muted/60 focus:ring-1 focus:ring-accent ${
                     errors.email ? 'border-red-500' : 'border-edge'
                   }`}
                 />
@@ -290,7 +290,7 @@ export function ContactSection() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Write a brief note regarding potential roles or collaboration..."
-                  className={`w-full px-3.5 py-2.5 rounded bg-base border text-sm text-content-primary placeholder:text-content-muted/60 focus:ring-1 focus:ring-accent ${
+                  className={`w-full px-3.5 py-2.5 rounded bg-base border text-base sm:text-sm text-content-primary placeholder:text-content-muted/60 focus:ring-1 focus:ring-accent ${
                     errors.message ? 'border-red-500' : 'border-edge'
                   }`}
                 />
@@ -300,12 +300,12 @@ export function ContactSection() {
               </div>
 
               {/* Submit CTA */}
-              <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                 {hasFormEndpoint ? (
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-accent text-base font-semibold hover:bg-accent-hover transition-colors font-mono text-xs disabled:opacity-50 focus:ring-1 focus:ring-accent"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded bg-accent text-base font-semibold hover:bg-accent-hover transition-colors font-mono text-xs disabled:opacity-50 focus:ring-1 focus:ring-accent"
                   >
                     <Send size={14} />
                     <span>{isSubmitting ? 'Transmitting...' : 'Send Message'}</span>
@@ -313,14 +313,14 @@ export function ContactSection() {
                 ) : (
                   <a
                     href={`mailto:${profile.social.email}?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(formData.name || 'Visitor')}&body=${encodeURIComponent(formData.message || '')}`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-accent text-base font-semibold hover:bg-accent-hover transition-colors font-mono text-xs focus:ring-1 focus:ring-accent"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded bg-accent text-base font-semibold hover:bg-accent-hover transition-colors font-mono text-xs focus:ring-1 focus:ring-accent"
                   >
                     <Mail size={14} />
                     <span>Compose Direct Email</span>
                   </a>
                 )}
 
-                <span className="text-[11px] font-mono text-content-muted">
+                <span className="text-[11px] font-mono text-content-muted text-center sm:text-right">
                   No tracking scripts or telemetry attached.
                 </span>
               </div>

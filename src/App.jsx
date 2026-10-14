@@ -27,7 +27,7 @@ export function App() {
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none -z-10 h-full w-full"></div>
 
       {/* Main Content Area */}
-      <main id="main-content" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main id="main-content" className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <About />
         <Projects />

@@ -21,6 +21,8 @@ html {
   background-color: var(--color-bg-base);
   color: var(--color-text-primary);
   color-scheme: dark;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -28,22 +30,34 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Text wrapping protection for narrow viewports (320px - 360px) */
+.break-word-safe {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
-::-webkit-scrollbar-track {
-  background: #0C0D0F;
-}
-::-webkit-scrollbar-thumb {
-  background: #2A2E35;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #3D424D;
+
+/* Responsive custom scrollbar */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0C0D0F;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2A2E35;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3D424D;
+  }
 }
 
 /* Focus styles */

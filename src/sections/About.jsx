@@ -43,8 +43,8 @@ export function About() {
         </div>
 
         {/* Education & Core Topics sidebar */}
-        <div className="lg:col-span-5 space-y-4">
-          <div className="p-6 rounded-lg bg-base-secondary/80 border border-edge space-y-4">
+        <div className="lg:col-span-5 space-y-4 w-full">
+          <div className="p-4 sm:p-6 rounded-lg bg-base-secondary/80 border border-edge space-y-4">
             <div className="flex items-center gap-2.5 font-mono text-xs text-accent uppercase">
               <GraduationCap size={16} />
               <span>Academic Curriculum</span>

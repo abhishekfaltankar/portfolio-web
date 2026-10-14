@@ -128,11 +128,11 @@ export function GitHubProjects() {
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col justify-between p-5 rounded-lg bg-base-secondary/70 hover:bg-base-elevated border border-edge/70 hover:border-edge transition-all focus:ring-1 focus:ring-accent"
+              className="group flex flex-col justify-between p-4 sm:p-5 rounded-lg bg-base-secondary/70 hover:bg-base-elevated border border-edge/70 hover:border-edge transition-all focus:ring-1 focus:ring-accent"
             >
               <div>
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <h4 className="font-mono text-sm font-semibold text-content-primary group-hover:text-accent transition-colors break-words">
+                  <h4 className="font-mono text-xs sm:text-sm font-semibold text-content-primary group-hover:text-accent transition-colors break-word-safe">
                     {repo.name}
                   </h4>
                   <ExternalLink

@@ -37,24 +37,24 @@ export function ResumeModal({ isOpen, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="resume-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 md:p-6 bg-black/85 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-base-secondary border border-edge rounded-lg p-6 sm:p-8 shadow-2xl text-content-primary"
+        className="relative w-full max-w-2xl max-h-[92dvh] sm:max-h-[90vh] overflow-y-auto bg-base-secondary border border-edge rounded-lg p-4 sm:p-6 lg:p-8 shadow-2xl text-content-primary"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 border-b border-edge/60 pb-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded bg-base-elevated border border-edge text-accent">
-              <FileText size={22} />
+        <div className="flex items-start justify-between gap-3 border-b border-edge/60 pb-4">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="p-2 sm:p-2.5 rounded bg-base-elevated border border-edge text-accent shrink-0">
+              <FileText size={20} className="sm:w-[22px] sm:h-[22px]" />
             </div>
-            <div>
-              <h3 id="resume-modal-title" className="text-xl font-bold tracking-tight">
+            <div className="min-w-0">
+              <h3 id="resume-modal-title" className="text-lg sm:text-xl font-bold tracking-tight">
                 Resume &amp; Credentials
               </h3>
-              <p className="text-xs font-mono text-content-muted mt-0.5">
+              <p className="text-[11px] sm:text-xs font-mono text-content-muted mt-0.5 break-all">
                 Configured path: {profile.resume.path}
               </p>
             </div>
@@ -80,11 +80,11 @@ export function ResumeModal({ isOpen, onClose }) {
               <p className="text-xs text-content-secondary mt-1">
                 The compiled resume is ready to view or download.
               </p>
-              <div className="mt-4 flex gap-3">
+              <div className="mt-4 flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                 <a
                   href={profile.resume.path}
                   download={profile.resume.filename}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded bg-accent text-base text-xs font-semibold hover:bg-accent-hover transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 rounded bg-accent text-base text-xs font-semibold hover:bg-accent-hover transition-colors"
                 >
                   <Download size={14} />
                   <span>Download PDF</span>
@@ -93,7 +93,7 @@ export function ResumeModal({ isOpen, onClose }) {
                   href={profile.resume.path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded bg-base-elevated border border-edge text-content-primary text-xs font-mono hover:bg-base-hover transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 rounded bg-base-elevated border border-edge text-content-primary text-xs font-mono hover:bg-base-hover transition-colors"
                 >
                   <ExternalLink size={14} />
                   <span>Open in New Tab</span>
@@ -161,17 +161,17 @@ export function ResumeModal({ isOpen, onClose }) {
         </div>
 
         {/* Footer actions */}
-        <div className="mt-6 pt-4 border-t border-edge/60 flex items-center justify-between">
+        <div className="mt-6 pt-4 border-t border-edge/60 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
           <a
             href={`mailto:${profile.social.email}?subject=Interview%20Inquiry%20-%20Abhishek%20Faltankar`}
-            className="inline-flex items-center gap-2 text-xs font-mono text-accent hover:underline"
+            className="inline-flex items-center justify-center sm:justify-start gap-2 text-xs font-mono text-accent hover:underline py-1"
           >
             <Mail size={14} />
             <span>Request Resume via Direct Email</span>
           </a>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 text-xs font-mono rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary transition-colors"
+            className="w-full sm:w-auto px-4 py-2 sm:py-1.5 text-xs font-mono rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary transition-colors text-center"
           >
             Close
           </button>

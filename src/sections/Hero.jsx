@@ -27,52 +27,54 @@ export function Hero({ onOpenResume }) {
             <span className="font-mono text-xs sm:text-sm text-accent uppercase tracking-wider block">
               {'// Student Developer & Systems Builder'}
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-content-primary leading-[1.15]">
-              Hey, I'm <span className="text-content-primary underline decoration-accent/60 decoration-2 underline-offset-8">{profile.name}</span>.<br />
-              I like building things that work.
+            <h1 className="text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-content-primary leading-[1.18] sm:leading-[1.15]">
+              Hey, I'm <span className="text-content-primary underline decoration-accent/60 decoration-2 underline-offset-8">{profile.name}</span>.<br className="hidden sm:inline" />
+              {' '}I like building things that work.
             </h1>
           </div>
 
           {/* Narrative text */}
-          <p className="text-base sm:text-lg text-content-secondary leading-relaxed max-w-xl">
+          <p className="text-sm sm:text-base lg:text-lg text-content-secondary leading-relaxed max-w-xl">
             I'm a B.Tech student in <strong className="text-content-primary font-semibold">Artificial Intelligence &amp; Data Science</strong> (Class of 2027). I focus on practical software engineering, computer vision pipelines, and full-stack applications that solve concrete problems.
           </p>
 
           {/* Action CTAs */}
-          <div className="pt-2 flex flex-wrap items-center gap-3 font-mono text-xs">
+          <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 font-mono text-xs">
             <a
               href="#work"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-accent text-base font-semibold hover:bg-accent-hover transition-colors focus:ring-1 focus:ring-accent shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded bg-accent text-base font-semibold hover:bg-accent-hover transition-colors focus:ring-1 focus:ring-accent shadow-sm"
             >
               <span>Explore Selected Work</span>
               <ArrowDown size={14} />
             </a>
 
-            <button
-              onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary transition-colors focus:ring-1 focus:ring-accent"
-            >
-              <FileText size={14} className="text-accent" />
-              <span>Resume</span>
-            </button>
+            <div className="w-full sm:w-auto flex items-center gap-2.5 sm:gap-3">
+              <button
+                onClick={onOpenResume}
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary transition-colors focus:ring-1 focus:ring-accent"
+              >
+                <FileText size={14} className="text-accent" />
+                <span>Resume</span>
+              </button>
 
-            <a
-              href={profile.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary hover:text-accent transition-colors focus:ring-1 focus:ring-accent"
-            >
-              <GithubIcon size={14} />
-              <span>GitHub</span>
-              <ArrowUpRight size={12} className="text-content-muted" />
-            </a>
+              <a
+                href={profile.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary hover:text-accent transition-colors focus:ring-1 focus:ring-accent"
+              >
+                <GithubIcon size={14} />
+                <span>GitHub</span>
+                <ArrowUpRight size={12} className="text-content-muted" />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Right technical annotation card */}
-        <div className="lg:col-span-5">
-          <div className="p-6 rounded-lg bg-base-secondary/90 border border-edge font-mono text-xs shadow-lg space-y-4">
+        <div className="lg:col-span-5 w-full">
+          <div className="p-4 sm:p-6 rounded-lg bg-base-secondary/90 border border-edge font-mono text-xs shadow-lg space-y-4">
             {/* Card header */}
             <div className="flex items-center justify-between pb-3 border-b border-edge/60 text-content-muted">
               <div className="flex items-center gap-2">
@@ -104,7 +106,7 @@ export function Hero({ onOpenResume }) {
                   href="https://github.com/abhishekfaltankar/Multimodal-Deepfake-Detection"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent hover:underline text-right truncate max-w-[200px]"
+                  className="text-accent hover:underline text-right truncate max-w-[150px] min-[360px]:max-w-[180px] sm:max-w-[240px]"
                 >
                   Multimodal-Deepfake-Detection
                 </a>

@@ -31,32 +31,32 @@ export function ProjectModal({ project, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-project-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 md:p-6 bg-black/85 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-base-secondary border border-edge rounded-lg p-6 sm:p-8 shadow-2xl text-content-primary"
+        className="relative w-full max-w-3xl max-h-[92dvh] sm:max-h-[90vh] overflow-y-auto bg-base-secondary border border-edge rounded-lg p-4 sm:p-6 md:p-8 shadow-2xl text-content-primary"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar */}
-        <div className="flex items-start justify-between gap-4 border-b border-edge/60 pb-5">
-          <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-accent uppercase mb-1">
+        <div className="flex items-start justify-between gap-4 border-b border-edge/60 pb-4 sm:pb-5">
+          <div className="flex-1 pr-2">
+            <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-accent uppercase mb-1">
               <span>{project.category}</span>
               <span className="text-edge">•</span>
               <span>{project.year}</span>
             </div>
-            <h3 id="modal-project-title" className="text-xl sm:text-2xl font-bold tracking-tight text-content-primary">
+            <h3 id="modal-project-title" className="text-lg sm:text-2xl font-bold tracking-tight text-content-primary break-word-safe">
               {project.title}
             </h3>
-            <p className="text-sm text-content-secondary mt-1">
+            <p className="text-xs sm:text-sm text-content-secondary mt-1 leading-relaxed">
               {project.tagline}
             </p>
           </div>
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="p-2 text-content-muted hover:text-content-primary hover:bg-base-elevated rounded transition-colors focus:ring-1 focus:ring-accent"
+            className="p-2 text-content-muted hover:text-content-primary hover:bg-base-elevated rounded transition-colors focus:ring-1 focus:ring-accent shrink-0"
           >
             <X size={20} />
           </button>
@@ -163,13 +163,13 @@ export function ProjectModal({ project, onClose }) {
         </div>
 
         {/* Footer actions */}
-        <div className="mt-8 pt-5 border-t border-edge/60 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+        <div className="mt-8 pt-5 border-t border-edge/60 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-medium rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary transition-colors focus:ring-1 focus:ring-accent"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 text-xs font-mono font-medium rounded bg-base-elevated hover:bg-base-hover border border-edge text-content-primary transition-colors focus:ring-1 focus:ring-accent"
             >
               <GithubIcon size={15} />
               <span>Inspect Source on GitHub</span>
@@ -179,7 +179,7 @@ export function ProjectModal({ project, onClose }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold rounded bg-accent text-base hover:bg-accent-hover transition-colors focus:ring-1 focus:ring-accent"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 text-xs font-mono font-semibold rounded bg-accent text-base hover:bg-accent-hover transition-colors focus:ring-1 focus:ring-accent"
               >
                 <ExternalLink size={15} />
                 <span>Open Live Deployment</span>
@@ -188,9 +188,9 @@ export function ProjectModal({ project, onClose }) {
           </div>
           <button
             onClick={onClose}
-            className="text-xs font-mono text-content-muted hover:text-content-primary transition-colors"
+            className="text-xs font-mono text-content-muted hover:text-content-primary text-center sm:text-right py-1 transition-colors"
           >
-            Press Esc or click outside to close
+            Close
           </button>
         </div>
       </div>

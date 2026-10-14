@@ -20,7 +20,7 @@ export function Skills() {
         {skillCategories.map((cat) => (
           <div
             key={cat.id}
-            className="p-6 rounded-lg bg-base-secondary/80 border border-edge hover:border-edge-bright transition-colors"
+            className="p-4 sm:p-6 rounded-lg bg-base-secondary/80 border border-edge hover:border-edge-bright transition-colors"
           >
             <div className="mb-4">
               <h3 className="text-base sm:text-lg font-bold text-content-primary">
@@ -33,14 +33,14 @@ export function Skills() {
 
             <ul className="space-y-3 pt-3 border-t border-edge/60">
               {cat.skills.map((skill) => (
-                <li key={skill.name} className="flex items-start justify-between gap-3 text-xs">
+                <li key={skill.name} className="flex flex-col min-[420px]:flex-row min-[420px]:items-center justify-between gap-1 min-[420px]:gap-3 text-xs">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
                     <span className="font-mono font-semibold text-content-primary">
                       {skill.name}
                     </span>
                   </div>
-                  <span className="text-content-muted font-mono text-[11px] text-right truncate max-w-[220px]">
+                  <span className="text-content-muted font-mono text-[11px] min-[420px]:text-right truncate min-[420px]:max-w-[240px] pl-3.5 min-[420px]:pl-0">
                     {skill.context}
                   </span>
                 </li>
