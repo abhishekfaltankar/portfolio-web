@@ -59,7 +59,7 @@ export function Header({ onOpenResume }) {
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-base/85 border-b border-edge/60 transition-colors">
-      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 h-16 sm:h-18 flex items-center justify-between">
         {/* Typographic Monogram Logo */}
         <a
           href="#top"

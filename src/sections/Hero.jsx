@@ -9,12 +9,12 @@ import { profile } from '../data/profile';
  */
 export function Hero({ onOpenResume }) {
   return (
-    <section id="hero" className="pt-12 sm:pt-20 pb-16 lg:pb-24">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <section id="hero" className="pt-12 sm:pt-20 xl:pt-28 pb-16 lg:pb-24 xl:pb-32">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
         {/* Left narrative column */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-7 space-y-6 xl:space-y-8">
           {/* Status pill with subtle pulse */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-base-elevated border border-edge font-mono text-xs text-content-secondary">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-base-elevated border border-edge font-mono text-xs xl:text-sm text-content-secondary">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -24,17 +24,17 @@ export function Hero({ onOpenResume }) {
 
           {/* Primary Name & Headline */}
           <div className="space-y-3">
-            <span className="font-mono text-xs sm:text-sm text-accent uppercase tracking-wider block">
+            <span className="font-mono text-xs sm:text-sm xl:text-base text-accent uppercase tracking-wider block">
               {'// Student Developer & Systems Builder'}
             </span>
-            <h1 className="text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-content-primary leading-[1.18] sm:leading-[1.15]">
+            <h1 className="text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-content-primary leading-[1.18] sm:leading-[1.15] xl:leading-[1.12]">
               Hey, I'm <span className="text-content-primary underline decoration-accent/60 decoration-2 underline-offset-8">{profile.name}</span>.<br className="hidden sm:inline" />
               {' '}I like building things that work.
             </h1>
           </div>
 
           {/* Narrative text */}
-          <p className="text-sm sm:text-base lg:text-lg text-content-secondary leading-relaxed max-w-xl">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-content-secondary leading-relaxed max-w-xl xl:max-w-2xl">
             I'm a B.Tech student in <strong className="text-content-primary font-semibold">Artificial Intelligence &amp; Data Science</strong> (Class of 2027). I focus on practical software engineering, computer vision pipelines, and full-stack applications that solve concrete problems.
           </p>
 
