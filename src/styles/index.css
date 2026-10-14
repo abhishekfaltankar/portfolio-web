@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-base: #0C0D0F;
+  --color-bg-secondary: #121417;
+  --color-bg-elevated: #181B20;
+  --color-bg-hover: #1F232A;
+  --color-text-primary: #F1F0EA;
+  --color-text-secondary: #A0A4AD;
+  --color-text-muted: #747985;
+  --color-border: #2A2E35;
+  --color-border-subtle: #1C2026;
+  --color-accent: #B7F171;
+  --color-accent-hover: #A2DD5D;
+}
+
+/* Base resets & typography */
+html {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0D0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2E35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3D424D;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--color-accent);
+  color: #0C0D0F;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+}
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* Subtle grid texture */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(42, 46, 53, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(42, 46, 53, 0.25) 1px, transparent 1px);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
